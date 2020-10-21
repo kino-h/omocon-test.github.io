@@ -9,6 +9,17 @@ navigator.mediaDevices.getUserMedia({video: true, audio: true})
   videoElm.play();
   // 着信時に相手にカメラ映像を返せるように、グローバル変数に保存しておく
   localStream = stream;
+  // ミュート切替(自分)
+  $(function() {
+    var myaudioTrack = stream.getAudioTracks()[0];
+    $('#my-mic').on('click', function() {
+      if(myaudioTrack.enabled) {
+        myaudioTrack.enabled = false;
+      } else {
+        myaudioTrack.enabled = true;
+      }
+    });
+  });
 }).catch( error => {
   // 失敗時にはエラーログを出力
   console.error('mediaDevice.getUserMedia() error:', error);
@@ -49,12 +60,14 @@ mediaConnection.answer(localStream);
 setEventListener(mediaConnection);
 });
 
-// ミュート切替
-var theirvideo = $("#their-video").get(0);
-$("#their-mic").on("click", function() {
-  if(theirvideo.muted) {
-    theirvideo.muted = false;
-  } else {
-    theirvideo.muted = true;
-  }
+// ミュート切替(相手)
+$(function() {
+  var theirvideo = $('#their-video').get(0);
+  $('#their-mic').on('click', function() {
+    if(theirvideo.muted) {
+      theirvideo.muted = false;
+    } else {
+      theirvideo.muted = true;
+    }
+  });
 });
