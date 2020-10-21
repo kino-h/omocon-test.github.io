@@ -7,6 +7,7 @@ navigator.mediaDevices.getUserMedia({video: true, audio: true})
   const videoElm = document.getElementById('my-video');
   videoElm.srcObject = stream;
   videoElm.play();
+  muted = false;
   // 着信時に相手にカメラ映像を返せるように、グローバル変数に保存しておく
   localStream = stream;
 }).catch( error => {
