@@ -1,0 +1,83 @@
+/* normalize */
+body { 
+  margin: 0;
+  background-image: url("./background.jpg");
+  background-size: cover;
+}
+
+/* global styles */
+video {
+  background-color: #111;
+  width: 100%;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+h1, .note {
+  text-align: center;
+  color: #fff;
+}
+
+.meta {
+  text-align: center;
+  font-size: .8rem;
+  color: gray;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 980px;
+}
+
+/* p2p-media styles */
+.p2p-media {
+  align-items: center;
+  flex-direction: column;
+}
+
+.my-stream {
+  width: 50%;
+  height: 500px;
+  float: left;
+  background-color: #fff;
+}
+
+.your-stream {
+  width: 50%;
+  height: 500px;
+  float: right;
+  background-color: #fff;
+}
+
+.menu {
+  clear: both;
+}
+
+#my-photo {
+  clear: both;
+  width: 50%;
+  float: left;
+}
+
+#your-photo {
+  width: 50%;
+  float: right;
+}
+
+/* p2p-data styles */
+.p2p-data {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  margin: 0 8px;
+}
+
+.p2p-data .messages {
+  background-color: #eee;
+  min-height: 100px;
+  padding: 8px;
+  margin-top: 0;
+}
